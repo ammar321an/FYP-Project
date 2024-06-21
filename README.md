@@ -48,7 +48,7 @@ This project aims to detect monkeys using an AI model for object detection, ensu
 | **12V Battery**               | Powers the system                                          |
 | **Voltage Regulators (x2)**   | Regulates power supply                                     |
 | **Wiring & Resistors**        | Connects components securely                               |
-| **Display Module**            | Shows battery percentage                                   |
+| **Battery Display Module**    | Shows battery percentage                                   |
 | **Bearing**                   | Provides smooth rotational movement                        |
 | **Metal Base**                | Designed with SolidWorks and bent for the base structure   |
 | **3D Printed Head**           | Designed with SolidWorks for the robot's head              |
