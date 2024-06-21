@@ -32,7 +32,7 @@ This project aims to detect monkeys using an AI model for object detection, ensu
 | Component                     | Description                                                |
 |-------------------------------|------------------------------------------------------------|
 | **Raspberry Pi 4**            | Main processing unit                                       |
-| **Arduino Uno R4**            | Controls the ultrasonic sensors                            |
+| **Arduino Uno R4**            | Receives commands from the Raspberry Pi to activate the motion sensor and speaker |
 | **PCA9685**                   | PWM controller for servos                                  |
 | **180° Servo Motors (x2)**    | Enables head movement                                      |
 | **5-inch 30W Speaker**        | Outputs deterrent sound                                    |
