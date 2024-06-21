@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Created by Ammar</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/static/ai.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(5px); /* Adjust the blur radius as needed */
+            z-index: -1;
+        }
+        .home-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+	    opacity: 0.9;
+            margin: 110px auto; /* Center the container */
+            max-width: 400px; /* Adjust the width as needed */
+            height: 600px; /* Full height */
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            width: 200px;
+            margin: 10px 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px); /* Slight lift on hover for 3D effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+        }
+        .copyright {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .copyright::before {
+            content: "\00A9"; /* Copyright symbol */
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <h1>Created by Ammar</h1>
+        <div>
+            <button onclick="window.location.href='/login'">Login</button>
+            <button onclick="window.location.href='/register'">Register</button>
+        </div>
+    </div>
+    <div class="copyright">Ammar 2024 V1</div>
+</body>
+</html>

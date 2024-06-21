@@ -1,0 +1,7 @@
+sqlite3 site.db
+.tables
+PRAGMA table_info(user);
+CTRL +D 
+
+**Screenshot**
+grim -g "$(slurp)" screenshot.png

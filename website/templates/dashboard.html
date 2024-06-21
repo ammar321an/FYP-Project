@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+	body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url('/static/ai3.jpeg') no-repeat center center fixed;
+		background-size: cover;
+		filter: blur(5px); /* Adjust the blur radius as needed */
+		z-index: -1;
+	    }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            color: rgba(200, 200, 200, 0.9);;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+	    font-weight: bold;
+        }
+        .stream-btn { background-color: #015701; }
+        .stream-btn:hover { background-color: #45a049;
+            transform: translateY(-2px); /* Slight lift on hover for 3D effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+        .whatsapp-btn { background-color: #25D366; }
+        .whatsapp-btn:hover { background-color: #128C7E; }
+        .email-btn { background-color: #D44638; }
+        .email-btn:hover { background-color: #B23121; }
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+        .navbar .hamburger {
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        .navbar .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin-left: 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar .nav-links a:hover {
+            color: #ddd;
+        }
+        .home-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(150, 150, 150, 0.7); /* Semi-transparent white background */
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+	    opacity: 0.9;
+            margin: 80px auto; /* Center the container */
+            width: 400px; /* Adjust the width as needed */
+            height: 400px; /* Full height */
+        }
+        .copyright {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .copyright::before {
+            content: "\00A9"; /* Copyright symbol */
+            margin-right: 5px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        </div>
+    </div>
+    <div class="home-container">
+	    <h1>Dashboard</h1>
+	    <div class="button-container">
+		<a href="{{ url_for('start_streaming') }}"><button class="stream-btn">Start Streaming</button></a>
+	    </div>
+    </div>
+    <div class="copyright">Ammar 2024 V1</div>
+    <script>
+        function toggleNavbar() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+	<script>
+	  function toggleNavbar() {
+	    var navLinks = document.querySelector('.nav-links');
+	    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+	  }
+
+	  // Initialize SweetAlert2 Toast
+	  const Toast = Swal.mixin({
+	    toast: true,
+	    position: 'top-end',
+	    showConfirmButton: false,
+	    timer: 3000,
+	    timerProgressBar: true,
+	    didOpen: (toast) => {
+	      toast.addEventListener('mouseenter', Swal.stopTimer);
+	      toast.addEventListener('mouseleave', Swal.resumeTimer);
+	    }
+	  });
+
+	  // Add an event listener to the "Start Streaming" button
+	  document.addEventListener('DOMContentLoaded', function() {
+	    var startStreamingButton = document.querySelector('.stream-btn');
+	    if (startStreamingButton) {
+	      startStreamingButton.addEventListener('click', function(event) {
+		event.preventDefault(); // Prevent the default link action
+
+		Toast.fire({
+		  icon: 'info', // Use the info icon for the loading spinner
+		  title: 'Stream starting soon...',
+		  timer: 3000 // Adjust the timer as needed
+		}).then(function() {
+		  // Redirect to the next page after the toast has been displayed
+		  window.location.href = '{{ url_for('start_streaming') }}';
+		});
+	      });
+	    }
+	  });
+	</script>
+</body>
+</html>
