@@ -27,6 +27,21 @@ This project aims to detect monkeys using an AI model for object detection, ensu
 
 ---
 
+## 🖼️ Project Images
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <img src="Image/3dReal.png" alt="Front View" width="45%">
+    <img src="Image/BackReal.png" alt="Back View" width="45%">
+    <img src="Image/WiringReal.png" alt="Wiring View" width="45%">
+    <img src="Image/3d%20view.png" alt="3D Model Design" width="45%">
+    <img src="Image/1_home.png" alt="Home Page" width="45%">
+    <img src="Image/1_login.png" alt="Login Page" width="45%">
+    <img src="Image/1_register.png" alt="Registration Page" width="45%">
+    <img src="Image/1_streaming.png" alt="Live Streaming" width="45%">
+</div>
+
+---
+
 ## 🔧 Key Components
 
 | Component                     | Description                                                |
@@ -66,7 +81,16 @@ This project aims to detect monkeys using an AI model for object detection, ensu
 ## 📞 Contact
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/muhammad-ammar-yaseer-azizan-48b28a235/)
-[![Linktree](https://img.shields.io/badge/Linktree-Visit-green)](https://linktr.ee/ammarysr)
+
+### 🎥 Simulation Video
+<div style="display: flex; align-items: center;">
+  <a href="https://linktr.ee/ammarysr" style="margin-right: 10px;">
+    <img src="https://img.shields.io/badge/Linktree-Visit-green" alt="Linktree">
+  </a>
+  <a href="https://www.youtube.com/watch?v=v6anZHGEhNA">
+    <img src="https://img.shields.io/badge/YouTube-Watch-red" alt="YouTube">
+  </a>
+</div>
 
 ---
 
