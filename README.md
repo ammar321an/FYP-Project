@@ -82,7 +82,14 @@ This project aims to detect monkeys using an AI model for object detection, ensu
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/muhammad-ammar-yaseer-azizan-48b28a235/)
 
-### 🎥 Simulation Video
+### 🎥 Short Simulation Video
+<div style="display: flex; align-items: center;">
+  <a href="https://youtu.be/WD_V64XMX00">
+    <img src="https://img.shields.io/badge/YouTube-Watch-red" alt="YouTube">
+  </a>
+</div>
+
+### 🎥 Full Simulation Video
 <div style="display: flex; align-items: center;">
   <a href="https://linktr.ee/ammarysr" style="margin-right: 10px;">
     <img src="https://img.shields.io/badge/Linktree-Visit-green" alt="Linktree">
